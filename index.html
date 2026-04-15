@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Richard Zhong</title>
+  <meta name="description" content="Personal website — AI safety and alignment research." />
+
+  <!-- Fonts: a warm serif for body, a quiet sans for accents -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f5f1ea;            /* warm off-white */
+      --ink: #2a2622;           /* near-black, warm */
+      --muted: #6b6258;         /* muted brown-gray */
+      --rule: #d9d2c5;          /* hairline */
+      --accent: #8a4f2c;        /* terracotta link */
+      --accent-hover: #5e3417;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 80px 28px 120px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+    header .portrait {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid var(--rule);
+    }
+    header .heading-text { min-width: 0; }
+    header h1 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 2.4rem;
+      letter-spacing: 0.5px;
+      margin: 0 0 6px;
+    }
+    header .tagline {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    header .header-links {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    @media (max-width: 480px) {
+      header { flex-direction: column; align-items: flex-start; gap: 16px; }
+      header .portrait { width: 130px; height: 130px; }
+    }
+
+    /* Section headings */
+    h2 {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 56px 0 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    p { margin: 0 0 16px; }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(138, 79, 44, 0.3);
+      transition: color 0.15s, border-color 0.15s;
+    }
+    a:hover {
+      color: var(--accent-hover);
+      border-bottom-color: var(--accent-hover);
+    }
+
+    em { font-style: italic; color: var(--muted); }
+
+    /* Entry list (research, publications, writing) */
+    .entry {
+      margin-bottom: 22px;
+    }
+    .entry-title {
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+    .entry-meta {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .entry-desc {
+      font-size: 0.95rem;
+      color: var(--ink);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    /* Contact icons row */
+    .contact {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 8px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 80px;
+      padding-top: 18px;
+      border-top: 1px solid var(--rule);
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 520px) {
+      html, body { font-size: 18px; }
+      .wrap { padding: 56px 22px 80px; }
+      header h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <img src="portrait.jpg" alt="Portrait of Richard Zhong" class="portrait" />
+      <div class="heading-text">
+        <h1>Richard Zhong</h1>
+        <div class="tagline">M.S. Computer Engineering · NYU Tandon</div>
+        <div class="header-links">
+          <a href="cv.pdf" target="_blank" rel="noopener">cv</a>
+          <a href="mailto:rhz2020@nyu.edu">email</a>
+          <a href="https://github.com/chardzhong" target="_blank" rel="noopener">github</a>
+          <a href="https://linkedin.com/in/richard-zhong" target="_blank" rel="noopener">linkedin</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <p>
+        I&rsquo;m a Master&rsquo;s student in Computer Engineering at NYU Tandon, advised by
+        <a href="https://chinmayhegde.github.io/" target="_blank" rel="noopener">Chinmay Hegde</a>.
+        My research focuses on <em>scalable oversight</em> of language models, specifically
+        adversarial methods for hardening rubric-based judges in non-verifiable domains.
+      </p>
+      <p>
+        Before NYU I studied Computer Science and Managerial Economics at UMass Amherst.
+        I&rsquo;m broadly interested in alignment, evaluation, and the failure modes of
+        learned reward signals.
+      </p>
+    </section>
+
+    <!-- RESEARCH -->
+    <h2>Research</h2>
+    <section id="research">
+      <div class="entry">
+        <div class="entry-title">Adversarial Rubric Optimization for LLM Alignment</div>
+        <div class="entry-meta">M.S. Thesis &middot; in progress, 2026</div>
+        <div class="entry-desc">
+          A two-phase iterative loop: a GRPO-trained exploit model surfaces preference
+          transitivity violations in rubric-conditioned judges, and a rubric generator is
+          fine-tuned to harden against those exploits. Built on Llama-3.3-70B (judge) and
+          RubricARM-8B (generator). The framing grew out of earlier work characterizing
+          multi-dimensional preference landscapes in DPO, where I found high cross-factor
+          correlation and low discriminatory power of harmlessness across 12 factors and
+          5 models. Those results pointed at evaluation as the underlying bottleneck and
+          motivated the shift toward attacking judge robustness directly.
+          <a href="research-overview.pdf" target="_blank" rel="noopener">research overview</a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Fine-Tuning LLMs Without Normalization: DyT under SFT</div>
+        <div class="entry-meta">NYU ECE-GY 9143 (HPML) · 2025</div>
+        <div class="entry-desc">
+          Extended Dynamic Tanh
+          (<a href="https://arxiv.org/abs/2503.10622" target="_blank" rel="noopener">Zhu et al., CVPR 2025</a>)
+          from pretraining into post-training. Replaced LayerNorm in DistilGPT2 and
+          Pythia-410M with DyT, then evaluated across two tracks (PEFT with LoRA and full
+          SFT) on Alpaca, ShareGPT, and RE-WILD. DyT&rsquo;s pretraining gains did not transfer
+          cleanly to either regime. The loss gap shrank with scale, surfacing a
+          relationship between model size and DyT&rsquo;s training stability under fine-tuning.
+          <a href="https://github.com/chardzhong/DyT-NoNorm-LLMs-REWILD" target="_blank" rel="noopener">code &amp; report</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <h2>Publications</h2>
+    <section id="publications">
+      <p><em>Coming soon.</em></p>
+      <!--
+      <div class="entry">
+        <div class="entry-title">Paper Title Here</div>
+        <div class="entry-meta">First Author, Co-Author · Venue, Year · <a href="#">pdf</a> · <a href="#">code</a></div>
+      </div>
+      -->
+    </section>
+
+    <footer>
+      &copy; 2026 Richard Zhong &middot; built with HTML and care
+    </footer>
+
+  </div>
+</body>
+</html>
