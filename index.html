@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Richard Zhong</title>
   <meta name="description" content="Personal website — AI safety and alignment research." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
   <!-- Fonts: a warm serif for body, a quiet sans for accents -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -182,15 +183,18 @@
     <!-- ABOUT -->
     <section id="about">
       <p>
-        I&rsquo;m a Master&rsquo;s student in Computer Engineering at NYU Tandon, advised by
+        I recently completed my Master&rsquo;s in Computer Engineering at NYU Tandon, advised by
         <a href="https://chinmayhegde.github.io/" target="_blank" rel="noopener">Chinmay Hegde</a>.
-        My research focuses on <em>scalable oversight</em> of language models, specifically
+        My thesis focused on <em>scalable oversight</em> of language models, specifically
         adversarial methods for hardening rubric-based judges in non-verifiable domains.
       </p>
       <p>
+        I&rsquo;m currently working on MoE post-training research at
+        <a href="https://marin.community/" target="_blank" rel="noopener">Marin</a>.
+      </p>
+      <p>
         Before NYU I studied Computer Science and Managerial Economics at UMass Amherst.
-        I&rsquo;m broadly interested in alignment, evaluation, and the failure modes of
-        learned reward signals.
+        I&rsquo;m broadly interested in safety &amp; alignment and continuous learning.
       </p>
     </section>
 
@@ -199,17 +203,26 @@
     <section id="research">
       <div class="entry">
         <div class="entry-title">Adversarial Rubric Optimization for LLM Alignment</div>
-        <div class="entry-meta">M.S. Thesis &middot; in progress, 2026</div>
+        <div class="entry-meta">M.S. Thesis, NYU Tandon &middot; completed May 2026</div>
         <div class="entry-desc">
-          A two-phase iterative loop: a GRPO-trained exploit model surfaces preference
-          transitivity violations in rubric-conditioned judges, and a rubric generator is
-          fine-tuned to harden against those exploits. Built on Llama-3.3-70B (judge) and
-          RubricARM-8B (generator). The framing grew out of earlier work characterizing
-          multi-dimensional preference landscapes in DPO, where I found high cross-factor
-          correlation and low discriminatory power of harmlessness across 12 factors and
-          5 models. Those results pointed at evaluation as the underlying bottleneck and
-          motivated the shift toward attacking judge robustness directly.
-          <a href="research-overview.pdf" target="_blank" rel="noopener">research overview</a>
+          A two-phase adversarial framework for auditing rubric-guided LLM judges: an exploit
+          model trained via GRPO learns to construct responses that violate preference
+          transitivity, and a rubric generator is meant to be hardened against the resulting
+          exploits. Implemented end-to-end on Llama-3.1-8B-Instruct (exploit model) and
+          RubricARM-8B-Judge, against a deliberately weakened rubric generator to broaden the
+          attack surface. The exploit loop did surface genuine transitivity violations &mdash;
+          including several that trace back to identifiable structural flaws in the generated
+          rubrics &mdash; but GRPO could not reliably amplify them at scale: the two target
+          conditions (beating the chosen response, losing to the rejected one) turn out to be
+          strongly anti-correlated under a coherent judge, so successful exploits stayed rare
+          and non-reproducible. The patching phase is implemented but wasn&rsquo;t exercised,
+          since the exploit loop never produced a stable population to patch against. The
+          framing grew out of earlier work characterizing multi-dimensional preference
+          landscapes in DPO, where I found high cross-factor correlation and low discriminatory
+          power of harmlessness across 12 factors and 5 models &mdash; those results pointed at
+          evaluation as the underlying bottleneck and motivated attacking judge robustness
+          directly.
+          <a href="thesis.pdf" target="_blank" rel="noopener">full thesis (pdf)</a>
         </div>
       </div>
 
@@ -229,17 +242,16 @@
       </div>
     </section>
 
-    <!-- PUBLICATIONS -->
+    <!-- PUBLICATIONS
     <h2>Publications</h2>
     <section id="publications">
       <p><em>Coming soon.</em></p>
-      <!--
       <div class="entry">
         <div class="entry-title">Paper Title Here</div>
         <div class="entry-meta">First Author, Co-Author · Venue, Year · <a href="#">pdf</a> · <a href="#">code</a></div>
       </div>
-      -->
     </section>
+    -->
 
     <footer>
       &copy; 2026 Richard Zhong &middot; built with HTML and care
