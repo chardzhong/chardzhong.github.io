@@ -205,24 +205,16 @@
         <div class="entry-title">Adversarial Rubric Optimization for LLM Alignment</div>
         <div class="entry-meta">M.S. Thesis, NYU Tandon &middot; completed May 2026</div>
         <div class="entry-desc">
-          A two-phase adversarial framework for auditing rubric-guided LLM judges: an exploit
-          model trained via GRPO learns to construct responses that violate preference
-          transitivity, and a rubric generator is meant to be hardened against the resulting
-          exploits. Implemented end-to-end on Llama-3.1-8B-Instruct (exploit model) and
-          RubricARM-8B-Judge, against a deliberately weakened rubric generator to broaden the
-          attack surface. The exploit loop did surface genuine transitivity violations &mdash;
-          including several that trace back to identifiable structural flaws in the generated
-          rubrics &mdash; but GRPO could not reliably amplify them at scale: the two target
-          conditions (beating the chosen response, losing to the rejected one) turn out to be
-          strongly anti-correlated under a coherent judge, so successful exploits stayed rare
-          and non-reproducible. The patching phase is implemented but wasn&rsquo;t exercised,
-          since the exploit loop never produced a stable population to patch against. The
-          framing grew out of earlier work characterizing multi-dimensional preference
-          landscapes in DPO, where I found high cross-factor correlation and low discriminatory
-          power of harmlessness across 12 factors and 5 models &mdash; those results pointed at
-          evaluation as the underlying bottleneck and motivated attacking judge robustness
-          directly.
-          <a href="thesis.pdf" target="_blank" rel="noopener">full thesis (pdf)</a>
+          A two-phase adversarial framework for auditing rubric-guided LLM judges: a
+          GRPO-trained exploit model learns to construct responses that violate preference
+          transitivity, and a rubric generator is meant to be hardened against what it finds.
+          Implemented end-to-end on Llama-3.1-8B-Instruct and RubricARM-8B-Judge, against a
+          deliberately weakened RubricARM-8B-Rubric model. The loop surfaced real transitivity
+          violations that pointed to structural flaws in the rubric framework but could not
+          learn at scale with GRPO alone. Built on earlier work on DPO fine-tuning that found
+          preference dimensions of LLM-judged responses to be highly correlated and weakly
+          discriminating.
+          <a href="thesis.pdf" target="_blank" rel="noopener">pdf</a>
         </div>
       </div>
 
