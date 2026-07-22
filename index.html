@@ -209,7 +209,7 @@
           GRPO-trained exploit model learns to construct responses that violate preference
           transitivity, and a rubric generator is meant to be hardened against what it finds.
           Implemented end-to-end on Llama-3.1-8B-Instruct and RubricARM-8B-Judge, against a
-          deliberately weakened RubricARM-8B-Rubric model. The loop surfaced real transitivity
+          RubricARM-8B-Rubric model. The loop surfaced real transitivity
           violations that pointed to structural flaws in the rubric framework but could not
           learn at scale with GRPO alone. Built on earlier work on DPO fine-tuning that found
           preference dimensions of LLM-judged responses to be highly correlated and weakly
